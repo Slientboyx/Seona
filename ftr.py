@@ -1,3 +1,6 @@
+
+
+
 # Made By Hunter
 # Scammer Devil
 
@@ -39,7 +42,7 @@ async def _(event):
 
 ohk = [[custom.Button.inline("Back", data="suru")]]
 
-start = [[custom.Button.inline("Configuration Tutorial", data="contut"), custom.Button.inline("Commands", data="command")]]
+start = [[custom.Button.inline("Configuration Tutorial", data="hanji"), custom.Button.inline("Commands", data="command")]]
 start += [[custom.Button.url("Add me to your group", "t.me/Seona_RoBot?=start")]]
 
 
@@ -441,7 +444,11 @@ warn += [[custom.Button.inline("Back", data="BCK")]]
 
 
 
-
+@bot.on(events.CallbackQuery(data=b'hanji'))
+async def handler(event):
+# Pop-up message with alert
+await event.answer('Wrong answer!', alert=True)
+# Send
 
 
 
