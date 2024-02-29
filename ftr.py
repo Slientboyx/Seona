@@ -426,6 +426,12 @@ async def _(event):
 - /lowdemote: Demote an admin to low permissions
 - /middemote: Demote an admin to mid permissions''',buttons=warn) 
 
+@bot.on(events.CallbackQuery(data=b'hanji'))
+async def _(event):
+# Pop-up message with alert
+    await event.answer('Wrong answer!', alert=True)
+
+
 @bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ban_kk")))
 async def _(event):
     await event.edit('''** Bans & Kicks **
@@ -444,11 +450,6 @@ warn += [[custom.Button.inline("Back", data="BCK")]]
 
 
 
-@bot.on(events.CallbackQuery(data=b'hanji'))
-async def handler(event):
-# Pop-up message with alert
-await event.answer('Wrong answer!', alert=True)
-# Send
 
 
 
