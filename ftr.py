@@ -7,9 +7,10 @@ import re, os, random, asyncio
 from telethon import TelegramClient
 
 # Config Vars
-APP_ID = os.environ.get("APP_ID") 
-API_HASH = os.environ.get("API_HASH") 
-BOT_TOKEN = os.environ.get("BOT_TOKEN") 
+APP_ID = "2568615"
+API_HASH = "1e62cca9207a4469ca847526acebb660"
+BOT_TOKEN = "6956874781:AAGzsdSn3rSahmDx5hxlu9N6SvEFycubg_8"
+
 
 # telethon client
 bot = TelegramClient('bot', APP_ID, API_HASH).start(bot_token=BOT_TOKEN)
