@@ -42,7 +42,7 @@ Join my news channel to get information on all the latest updates.'''
 
 @bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"suru"))) 
 async def _(event):
-     await event.edit(LSTART, buttons=start.force_reply(single_use=True, selective=True, placeholder=True)) 
+     await event.edit(LSTART, buttons=start) 
 
 ohk = [[custom.Button.inline("Back", data="suru")]]
 
@@ -433,7 +433,7 @@ async def _(event):
 @bot.on(events.CallbackQuery(data=b'hanji'))
 async def _(event):
 # Pop-up message with alert
-    await event.answer('Wrong answer!', alert=True)
+    await event.delect()
 
 
 @bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ban_kk")))
