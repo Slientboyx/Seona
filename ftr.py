@@ -53,7 +53,7 @@ start += [[custom.Button.url("Add me to your group", "t.me/Seona_RoBot?=start")]
 @bot.on(events.NewMessage(pattern="^/pin$"))
 async def pin(event):
 
-    chat_id = await event.chat_id
+    chat_id = event.chat_id
     reply_msg = await event.get_reply_messsage()
     message = await event.get_reply_messsage()
     if not event.reply_msg:
