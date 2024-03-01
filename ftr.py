@@ -1,4 +1,8 @@
-
+# Forcing replies or clearing buttons.
+#await client.send_message(chat, 'Reply to me', buttons=Button.force_
+#˓→reply())
+#await client.send_message(chat, 'Bye Keyboard!', buttons=Button.clear())
+# Sch
 
 
 # Made By Hunter
@@ -38,7 +42,7 @@ Join my news channel to get information on all the latest updates.'''
 
 @bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"suru"))) 
 async def _(event):
-     await event.edit(LSTART, buttons=start) 
+     await event.edit(LSTART, buttons=start.clear()) 
 
 ohk = [[custom.Button.inline("Back", data="suru")]]
 
