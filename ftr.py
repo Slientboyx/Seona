@@ -54,15 +54,14 @@ start += [[custom.Button.url("Add me to your group", "t.me/Seona_RoBot?=start")]
 async def pin(event):
 
     chat_id = event.chat_id
-    reply_msg = event.get_reply_messsage()
-    message = await event.get_reply_messsage()
-    if not event.reply_msg:
+ 
+    if not is_reply:
         await event.reply(
             "You need to reply to a message to pin it!"
         )
         return
 
-    pin_message_id = message.reply_msg.id
+    pin_message_id = event.reply_msg_id
     message_link = f"http://t.me/c/{str(chat_id).replace(str(-100), '')}/{pin_message_id}"
 
     if (
