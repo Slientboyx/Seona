@@ -51,18 +51,18 @@ start += [[custom.Button.url("Add me to your group", "t.me/Seona_RoBot?=start")]
 
 
 @bot.on(events.NewMessage(pattern="^/pin$"))
-async def pin(event, message):
+async def pin(event):
 
     chat_id = message.chat_id
+    reply_msg = get_reply_messsage()
     
-    
-    if not message.reply_to_message:
-        await message.reply(
+    if not event.reply_msg:
+        await event.reply(
             "You need to reply to a message to pin it!"
         )
         return
 
-    pin_message_id = message.reply_to_message.message_id
+    pin_message_id = message.reply_msg.id
     message_link = f"http://t.me/c/{str(chat_id).replace(str(-100), '')}/{pin_message_id}"
 
     if (
@@ -80,7 +80,7 @@ async def pin(event, message):
             message_id=pin_message_id,
             disable_notification=True
         )
-        await message.reply(
+        await event.reply(
             f"I have pinned [this message]({message_link})."
         )
     
@@ -97,14 +97,14 @@ async def pin(event, message):
             message_id=pin_message_id,
             disable_notification=False
         )
-        await message.reply(
+        await event.reply(
             f"I have pinned [this message]({message_link}) and notified all members."
         )
     
     elif (
         len(message.command) >= 2
     ):
-        await message.reply(
+        await event.reply(
             f"'{message.command[1]}' was not recognised as a valid pin option. Please use one of: loud/violent/notify/silent/quiet"
         )
 
