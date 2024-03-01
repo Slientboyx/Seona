@@ -433,7 +433,7 @@ async def _(event):
 @bot.on(events.CallbackQuery(data=b'hanji'))
 async def _(event):
 # Pop-up message with alert
-    await event.delete(message_id)
+    await event.delete()
 
 
 @bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ban_kk")))
