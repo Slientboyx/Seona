@@ -4,7 +4,7 @@
 #await client.send_message(chat, 'Bye Keyboard!', buttons=Button.clear())
 # Sch
 
-
+#force_reply(single_use=None, selective=None, placeholder=None)
 # Made By Hunter
 # Scammer Devil
 
@@ -42,7 +42,7 @@ Join my news channel to get information on all the latest updates.'''
 
 @bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"suru"))) 
 async def _(event):
-     await event.edit(LSTART, buttons=start.force_reply()) 
+     await event.edit(LSTART, buttons=start.force_reply(single_use=True, selective=True, placeholder=True)) 
 
 ohk = [[custom.Button.inline("Back", data="suru")]]
 
