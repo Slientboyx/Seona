@@ -42,7 +42,7 @@ Join my news channel to get information on all the latest updates.'''
 
 @bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"suru"))) 
 async def _(event):
-     await event.edit(LSTART, buttons=start.force_reply) 
+     await event.edit(LSTART, buttons=start.force_reply()) 
 
 ohk = [[custom.Button.inline("Back", data="suru")]]
 
@@ -69,7 +69,7 @@ I can do a lot of cool stuffs, here's a short list:
 All of the possible commands can be used properly if I am an administrator in your group otherwise, I will not able to restrict users, send certain predefined actions etc.
 
 Join my news channel to get information on all the latest updates.'''
-      await bot.send_message(event.chat.id,START, buttons=start.clear())
+      await bot.send_message(event.chat.id,START, buttons=start.force_reply())
 
 HLP = '''Here is the list of all possible commands:
 - /start: Starts me! You've probably already used this.
