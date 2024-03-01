@@ -56,7 +56,7 @@ async def pin(event, message):
     chat_id = message.chat_id
     
     
-    if not event.reply_to_message:
+    if not message.reply_to_message:
         await message.reply(
             "You need to reply to a message to pin it!"
         )
@@ -80,7 +80,7 @@ async def pin(event, message):
             message_id=pin_message_id,
             disable_notification=True
         )
-        await event.reply(
+        await message.reply(
             f"I have pinned [this message]({message_link})."
         )
     
@@ -97,7 +97,7 @@ async def pin(event, message):
             message_id=pin_message_id,
             disable_notification=False
         )
-        await event.reply(
+        await message.reply(
             f"I have pinned [this message]({message_link}) and notified all members."
         )
     
