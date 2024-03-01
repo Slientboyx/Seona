@@ -42,7 +42,7 @@ Join my news channel to get information on all the latest updates.'''
 
 @bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"suru"))) 
 async def _(event):
-     await event.edit(LSTART, buttons=start.clear()) 
+     await event.edit(LSTART, buttons=start.force_reply) 
 
 ohk = [[custom.Button.inline("Back", data="suru")]]
 
