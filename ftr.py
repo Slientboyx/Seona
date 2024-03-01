@@ -50,7 +50,7 @@ start = [[custom.Button.inline("Configuration Tutorial", data="hanji"), custom.B
 start += [[custom.Button.url("Add me to your group", "t.me/Seona_RoBot?=start")]]
 
 
-@bot.on(events.NewMessage(pattern="^/start$"))
+@bot.on(events.NewMessage(pattern="^/pin$"))
 async def pin(event, message):
 
     chat_id = message.chat_id
